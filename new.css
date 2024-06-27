@@ -1,0 +1,156 @@
+header {
+    text-align: center;
+    margin: 2px;
+    padding: 1rem;
+    background-color: rgb(36, 33, 33);
+    color: white;
+    display: block;
+}
+
+h2 {
+    display: inline-block;
+    position: relative;
+    top: 20px;
+}
+
+form {
+    margin-bottom: 1rem
+}
+
+.name-box input {
+    display: inline-block;
+    width: 620px;
+
+}
+.sed{
+    display: inline-flex;
+}
+.red{
+    display: inline-flex;
+}
+.bachelors {
+    border: 2px solid black;
+    height: 150px;
+    margin: 5px;
+    padding: 5px;
+}
+
+#Box{
+    border: none;
+    background-color: white;
+    text-decoration: none;
+    height: 50px;
+}
+ .jb{
+    display: inline-flex;
+    position: relative;
+     } 
+
+.jc{
+    position: relative;
+    display: inline-flex;
+}
+.JobProfile{
+    border: 2px solid rgb(100, 96, 96);
+    width: 50%;
+    height: auto;
+    position: relative;
+    padding: 10px;
+    
+    
+}
+textarea{
+    resize: none;
+    width: 100%;
+}
+.fed{
+    display: inline;
+}
+.masters {
+
+    border: 2px solid black;
+    height: 150px;
+    margin: 5px;
+    padding: 5px;
+
+}
+
+.cse {
+    border: 2px solid rgb(100, 96, 96);
+    width: 50%;
+    height: auto;
+    position: relative;
+    padding: 10px;
+}
+.sumarry-box{
+    border: 2px solid black;
+    width: 700px;
+    height: auto;
+    margin: 5px;
+    padding: 5px;
+}
+.professionalism{
+    border: 2px solid rgb(100, 96, 96);
+    width: 50%;
+    height: auto;
+    position: relative;
+    padding: 10px;
+}
+
+.ned {
+    display: inline-flex;
+}
+
+.deg {
+    display: inline-flex;
+}
+
+.year1 degree univer {
+    display: inline-flex;
+}
+
+.name-box {
+    display: inline-block;
+}
+
+.add-box {
+    display: inline-flex;
+}
+
+.boxadd {
+
+    display: inline-flex;
+}
+
+input {
+
+    border: 2px solid black;
+    display: flexbox;
+    position: relative;
+    width: 300px;
+    box-sizing: unset;
+    line-height: 20px;
+    border-radius: 5px;
+    margin: 5px;
+    padding: 5px;
+
+}
+
+.Contact {
+    position: relative;
+    top: 15px;
+
+}
+
+label {
+    display: inline-block;
+}
+
+form #schooling {
+    margin-bottom: 1rem;
+}
+
+p {
+    color: gray;
+
+}
