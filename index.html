@@ -13,98 +13,85 @@
         <h1>RESUME BUILDER</h1>
     </header>
     <section id="editor">
-        <!-- <h2>Resume Editor</h2> -->
-
-        <!-- <div class="Contact" id="contact">
-        <form id="resume-form">
-        </form>
-    </div> -->
         <div class="resume-form" id="format">
             <form id="schooling">
-                <!-- <div class="number">
-                    <label for="Phone Number">Phone Number : </label>
-                    <input type="number" id="Phone Number" minlength="10" name="phone number" required />
-                </div> -->
                 <h2>Personal Details</h2>
                 <p>Fill your personal information in this section.</p>
                 <div class="name-box">
                     <div class="Fname">
-                        <label for="First Name"> <span>First Name :</span> </label>
+                        <label for="first-name"> <span>First Name :</span> </label>
                         <br>
-                        <input type="text" id="First Name" maxlength="10" name="fname"
+                        <input type="text" id="first-name" maxlength="10" name="first-name"
                             placeholder="Enter your first name " required />
                     </div>
                     <div class="Mname">
-                        <label for="Middle Name"> <span>Middle Name :</span> </label>
+                        <label for="middle-name"> <span>Middle Name :</span> </label>
                         <br>
-                        <input type="text" id="Middle Name" maxlength="10" name="fname"
+                        <input type="text" id="middle-name" maxlength="10" name="middle-name"
                             placeholder="Enter your middle name " />
                     </div>
                     <div class="Lname">
-                        <label for="Last Name"> <span>Last Name :</span> </label>
+                        <label for="last-name"> <span>Last Name :</span> </label>
                         <br>
-                        <input type="text" id="Last Name" maxlength="10" name="fname"
+                        <input type="text" id="last-name" maxlength="10" name="last-name"
                             placeholder="Enter your last name " required />
                     </div>
                 </div>
                 <br>
                 <div class="add-box">
                     <div class="number">
-                        <label for="Phone Number">Phone Number : </label>
+                        <label for="phone-number">Phone Number : </label>
                         <br>
-                        <input type="number" id="Phone Number" placeholder="Enter your phone number" minlength="10"
-                            name="phone number" required />
+                        <input type="tel" id="phone-number" placeholder="Enter your phone number" minlength="10"
+                            name="phone-number" required />
                     </div>
                     <div class="mail">
-                        <label for="Email Address">E-mail Address : </label>
+                        <label for="email-address">E-mail Address : </label>
                         <br>
-                        <input type="email" id="Email Address" placeholder="Enter your email id" name="myEmail"
+                        <input type="email" id="email-address" placeholder="Enter your email id" name="email-address"
                             required>
                     </div>
                 </div>
                 <br>
                 <div class="boxadd">
                     <div class="address">
-                        <label for="Address">Address : </label>
+                        <label for="address">Address : </label>
                         <br>
-                        <input type="text" id="Address" placeholder="Enter your address" name="address" required />
+                        <input type="text" id="address" placeholder="Enter your address" name="address" required />
                     </div>
                     <div class="linkedin">
-                        <label for="inl"> LinkledIn Profile : </label>
+                        <label for="linkedin">LinkedIn Profile : </label>
                         <br>
-                        <input type="text" id="inl" placeholder="Enter your linkedIn url" name="my-ln-url" required />
+                        <input type="url" id="linkedin" placeholder="Enter your LinkedIn url" name="linkedin-url" required />
                     </div>
                 </div>
 
                 <div class="cse">
-                    <h1>Educational Qualifications </h1>
+                    <h1>Educational Qualifications</h1>
                     <div class="bachelors">
                         <div class="deg">
                             <div class="year1">
-                                <label for="Year">Year of Bachelors : </label>
+                                <label for="bachelors-year">Year of Bachelors : </label>
                                 <br>
-                                <input type="number" id="Year" placeholder="Enter the year of bachelors " minlength="4"
-                                    name="year" required />
+                                <input type="number" id="bachelors-year" placeholder="Enter the year of bachelors " minlength="4" name="bachelors-year" required />
                             </div>
                             <div class="degree">
-                                <label for="Degree">Degree Course : </label>
+                                <label for="bachelors-degree">Degree Course : </label>
                                 <br>
-                                <input type="text" id="Degree" placeholder="Enter the degree course choosen"
-                                    name="degree" required />
+                                <input type="text" id="bachelors-degree" placeholder="Enter the degree course chosen" name="bachelors-degree" required />
                             </div>
                         </div>
                         <br><br>
                         <div class="ned">
                             <div class="univer">
-                                <label for="Year1">Name of the University : </label>
+                                <label for="bachelors-university">Name of the University : </label>
                                 <br>
-                                <input type="text" id="Year1" placeholder="Enter the name of the university" name="uni"
-                                    required />
+                                <input type="text" id="bachelors-university" placeholder="Enter the name of the university" name="bachelors-university" required />
                             </div>
                             <div class="time">
-                                <label for="Time">Time Duration: </label>
+                                <label for="bachelors-duration">Time Duration: </label>
                                 <br>
-                                <input type="text" id="Time" placeholder="Enter the time period" name="tt" required />
+                                <input type="text" id="bachelors-duration" placeholder="Enter the time period" name="bachelors-duration" required />
                             </div>
                         </div>
                     </div>
@@ -114,39 +101,31 @@
                         <div class="fed">
                             <div class="red">
                                 <div class="year2">
-                                    <label for="Year2">Year of Masters : </label>
+                                    <label for="masters-year">Year of Masters : </label>
                                     <br>
-                                    <input type="number" id="Year2" placeholder="Enter the year of masters "
-                                        minlength="4" name="YSear" required />
+                                    <input type="number" id="masters-year" placeholder="Enter the year of masters " minlength="4" name="masters-year" required />
                                 </div>
                                 <div class="degree3">
-                                    <label for="Degree3">Degree Course : </label>
+                                    <label for="masters-degree">Degree Course : </label>
                                     <br>
-                                    <input type="text" id="Degree3" placeholder="Enter the degree course choosen"
-                                        name="degree" required />
+                                    <input type="text" id="masters-degree" placeholder="Enter the degree course chosen" name="masters-degree" required />
                                 </div>
                             </div>
                             <br><br>
                             <div class="sed">
                                 <div class="univers">
-                                    <label for="Year3">Name of the University : </label>
+                                    <label for="masters-university">Name of the University : </label>
                                     <br>
-                                    <input type="text" id="Year3" placeholder="Enter the name of the university"
-                                        name="uni1" required />
+                                    <input type="text" id="masters-university" placeholder="Enter the name of the university" name="masters-university" required />
                                 </div>
                                 <div class="time1">
-                                    <label for="TimE">Time Duration: </label>
+                                    <label for="masters-duration">Time Duration: </label>
                                     <br>
-                                    <input type="text" id="TimE" placeholder="Enter the time period" name="ttt"
-                                        required />
+                                    <input type="text" id="masters-duration" placeholder="Enter the time period" name="masters-duration" required />
                                 </div>
                             </div>
-
-
                         </div>
-
                     </div>
-
                 </div>
                 <br> <br>
                 <div class="professionalism">
@@ -154,24 +133,23 @@
                     <h4 style="margin: 5px; padding: 5px;color:gray ;">Summary</h4>
 
                     <div class="sumarry-box">
-                        <textarea name="box" id="Box" rows="4"
+                        <textarea name="summary" id="summary-box" rows="4"
                             placeholder="Enter about your areas of excellence"></textarea>
                     </div>
                     <button class="btn"
-                        style="margin: 5px; padding: 5px; width: 100px;background-color: lightskyblue;">Add
-                        Section</button>
+                        style="margin: 5px; padding: 5px; width: 100px;background-color: lightskyblue;">Add Section</button>
                 </div>
                 <br><br>
                 <div class="JobProfile">
-                    <h1 style="padding: 5px; margin: 5px;">Your Experience </h1>
+                    <h1 style="padding: 5px; margin: 5px;">Your Experience</h1>
                     <div class="jb">
                         <div class="jt">
                             <label for="job-title" style="margin: 5px; padding: 5px;">Job Title</label><br>
                             <input type="text" id="job-title" name="job-title" placeholder="Enter Job Title"><br>
                         </div>
                         <div class="cmname">
-                            <label for="Company" style="padding: 5px; margin: 5px;">Company</label><br>
-                            <input type="text" id="Company" name="com-name" placeholder="Enter Company Name"><br>
+                            <label for="company" style="padding: 5px; margin: 5px;">Company</label><br>
+                            <input type="text" id="company" name="company" placeholder="Enter Company Name"><br>
                         </div>
                     </div>
 
@@ -189,12 +167,9 @@
                         </div>
                     </div>
                     <button class="btn"
-                        style="margin: 5px; padding: 5px; width: 100px;background-color: lightskyblue;">Add
-                        Section</button>
+                        style="margin: 5px; padding: 5px; width: 100px;background-color: lightskyblue;">Add Section</button>
                 </div>
-
-        </div>
-        </form>
+            </form>
         </div>
     </section>
     <div class="secondpage"></div>

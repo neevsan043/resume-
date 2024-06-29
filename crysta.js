@@ -2,14 +2,17 @@ const inputField = document.querySelector("#schooling");
 const main = document.querySelector("#editor");
 const secondPage = document.querySelector(".secondpage");
 let isHidden = true;
-const address = document.querySelector("#Address")
+const address = document.querySelector("#Address");
 console.log(address.innerHTML);
 
 function generate() {
-    if (isHidden) {
-        main.style.display = "none";
-        secondPage.style.display = "block";
-        secondPage.innerHTML = `
+  const phoneNumber = document.querySelector("#phone-number").value;
+  const phoneNumberRegex = "/^(()?d{3}())?(-|s)?d{3}(-|s)d{4}$/";
+  const phoneNumberMatch = phoneNumber.match(phoneNumberRegex);
+  if (isHidden && phoneNumberMatch) {
+    main.style.display = "none";
+    secondPage.style.display = "block";
+    secondPage.innerHTML = `
         
     <style>.left {
     border: 2px solid black;
@@ -270,7 +273,7 @@ body{
             <hr>
             <div class="contact" id="number">
                 Phone
-                <h6>**********</h6>
+                <h6>${phoneNumber || "**********"}</h6>
 
             </div>
             <div class="email" id="mail2">
@@ -323,19 +326,13 @@ body{
                 <hr>
             </div>
 
-
-
-
-
         </div>
 
-    
-
-
-</body>`;
-    } else {
-        main.style.display = "block";
-        secondPage.style.display = "none";
-    }
-    isHidden = !isHidden;
+    </body>`;
+  } else {
+    main.style.display = "block";
+    secondPage.style.display = "none";
+    alert("Please enter correct details");
+  }
+  isHidden = !isHidden;
 }
