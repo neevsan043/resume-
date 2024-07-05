@@ -4,15 +4,48 @@ const secondPage = document.querySelector(".secondpage");
 let isHidden = true;
 const address = document.querySelector("#Address");
 console.log(address.innerHTML);
+document.getElementById('professional-qualification').addEventListener('click', function () {
+   const experienceList = document.getElementById('experience-list');
+   const newExperienceItem = document.createElement('div');
+   newExperienceItem.classList.add('experience-item');
+   newExperienceItem.innerHTML = `
+       <div class="form-group">
+           <label for="job-title">Job Title*</label>
+           <input type="text" id="job-title" name="job-title" required>
+       </div>
+                  <div class="button-group">
+           <button type="button" class="delete-experience">Delete</button>
+       </div>
+   `;
+   experienceList.appendChild(newExperienceItem);
+});
 
 function generate() {
-  const phoneNumber = document.querySelector("#phone-number").value;
-  const phoneNumberRegex = "/^(()?d{3}())?(-|s)?d{3}(-|s)d{4}$/";
-  const phoneNumberMatch = phoneNumber.match(phoneNumberRegex);
-  if (isHidden && phoneNumberMatch) {
-    main.style.display = "none";
-    secondPage.style.display = "block";
-    secondPage.innerHTML = `
+   const phoneNumber = document.querySelector("#phone-number").value;
+   const email = document.querySelector("#email-address").value;
+   const address = document.querySelector("#address").value;
+   const batch = document.querySelector("#bachelors-year").value;
+   const bname = document.querySelector("#bachelors-degree").value;
+   const uname = document.querySelector("#bachelors-university").value;
+   const btime = document.querySelector("#bachelors-duration").value;
+   const mtime = document.querySelector("#masters-duration").value;
+   const muname = document.querySelector("#masters-university").value;
+   const masters = document.querySelector("#masters-year").value;
+   const mname = document.querySelector("#masters-degree").value;
+   const fname = document.querySelector("#first-name1").value;
+   const pqalify = document.querySelector("#summary-box").value;
+   const work = document.querySelector("#job-title").value;
+   const wname = document.querySelector("#company").value;
+   const location = document.querySelector("#location").value;
+   const tmp = document.querySelector("#timeperiod").value;
+   const phoneNumberRegex = /^\d{10}$/;
+   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+   const phoneNumberMatch = phoneNumberRegex.test(phoneNumber);
+   const emailMatch = emailRegex.test(email);
+   if (isHidden && phoneNumberMatch && emailMatch) {
+      main.style.display = "none";
+      secondPage.style.display = "block";
+      secondPage.innerHTML = `
         
     <style>.left {
     border: 2px solid black;
@@ -33,6 +66,7 @@ function generate() {
 }
 body{
     background-color:grey;
+    overflow-x: hidden;
 }
 /* .left text{
     position: absolute;
@@ -86,6 +120,9 @@ body{
     margin: -1px;
     color: rgb(177, 174, 174);
  }
+ h1{
+    color: rgb(5, 4, 4);
+ }
  .email{
     /* margin-top: 20px;
     margin-bottom: 50px; */
@@ -121,10 +158,17 @@ body{
     text-align: center;
     /* border: 2px solid white; */
     font-size: 40px;
-    
-    
-
  }
+ .fname{
+   position:relative;
+   margin: 5px;
+   padding:5px;
+   top: 0px;
+   left:500px;
+   font-size:100px;
+}
+
+
  .year{
     margin-top: 35px;
     margin-bottom: 5px;
@@ -160,6 +204,28 @@ body{
     display: block;
     width: 60% 
  }
+ .time1{
+ margin: 5px;
+   font-size: 25px;
+   text-align: left;
+   position: relative;
+   top: 185px;
+   left: 155px;
+   display: block;
+   width: 60% 
+ }
+ .time{
+   
+   margin: 5px;
+   font-size: 25px;
+   text-align: left;
+   position: relative;
+   top: 185px;
+   left: 155px;
+   display: block;
+   width: 60% 
+ 
+ }
  .year1{
     margin-top: 5px;
     margin-bottom: 5px;
@@ -168,7 +234,7 @@ body{
     font-size: 25px;
     text-align: left;
     position: relative;
-    top: 75px;
+    
     left: 155px;
     display: inline-block;
     width: 50%;
@@ -237,6 +303,14 @@ body{
     font-size: 40px;
     top: 1440px;
  }
+ .content{
+   position:relative;
+   margin: 5px;
+   padding:5px;
+   top: 10px;
+   left:500px;
+   background-color: grey;
+ }
  .new3 hr{
     position: absolute;
     top: 40px;
@@ -261,9 +335,49 @@ body{
  .adress input{
    background-color: blueviolet;
  }
+ .content{
+   position:relative;
+   margin: 5px;
+   padding:5px;
+   top:-50px;
+   left:500px;
+   color: rgb(192, 168, 168);
+ }
+ .work{
+   position:relative;
+   margin: 5px;
+   padding:5px;
+   top:-50px;
+   left:500px;
+   color: rgb(192, 168, 168);
+ }
+ .comname{
+   position:relative;
+   margin: 5px;
+   padding:5px;
+   top:-80px;
+   left:500px;
+   color: rgb(192, 168, 168);
+ }
+ .location{
+   position:relative;
+   margin: 5px;
+   padding:5px;
+   top:-110px;
+   left:500px;
+   color: rgb(192, 168, 168);
+ }
+ .tmp{
+   position:relative;
+   margin: 5px;
+   padding:5px;
+   top:-140px;
+   left:500px;
+   color: rgb(192, 168, 168);
+ }
  </style>
  <body>
-    
+      <div class="Complete">
         <div class="left">
             <img src="officialimg.jpg" alt="">
             <div class="text">
@@ -274,16 +388,14 @@ body{
             <div class="contact" id="number">
                 Phone
                 <h6>${phoneNumber || "**********"}</h6>
-
             </div>
             <div class="email" id="mail2">
                 E-mail
-                <h6>kbc2k24@gmail.com</h6>
+                <h6>${email || "kbc2k24@gmail.com"}</h6>
             </div>
-
             <div class="adress">
                 Address
-                <h6></h6>
+                <h6>${address || "Somewhere in the north"}</h6>
             </div>
 
             <div class="text2">
@@ -294,45 +406,79 @@ body{
             </div>
             <div class="year">
                 Year
-                <h6>Enter the year of your graduation </h6>
+                <h6>${batch || Batchelors}</h6>
             </div>
             <div class="degree">
                 Degree
-                <h6>Enter your degree</h6>
+                <h6>${bname || CourseName}</h6>
             </div>
             <div class="univ">
                 University
-                <h6>Enter the name of your University</h6>
+                <h6>${uname || University}</h6>
+            </div>
+            <div class="time">
+                Time Duration
+                <h6>${btime || Time_Duration}</h6>
             </div>
             <br><br>
             <br><br><br>
 
             <div class="year1">
                 Year
-                <h6>Enter the year of your graduation </h6>
+                <h6>${masters || Year}</h6>
             </div>
             <div class="degree1">
                 Degree
-                <h6>Enter your degree</h6>
+                <h6>${mname || GraduationYear}</h6>
             </div>
             <div class="univ1">
                 University
-                <h6>Enter the name of your University</h6>
+                <h6>${muname || UniversityName}</h6>
             </div>
-            <div class="expertise">
-                EXPERTIES
+            <div class="time1">
+                Time Duration
+                <h6>${mtime || Time_Duration}</h6>
             </div>
-            <div class="new2">
-                <hr>
-            </div>
+            
+            
 
         </div>
+        <div class="right">
+            <div class="fname">
+            <h3>${fname || First_Name}</h3>
+            </div>
+         <div class = "content">
+            <h1>Professional Resume</h1>
+            <h3>${pqalify || Content}</h3>
+         </div>
+         <div class="work">
+            <h1>Work Experience</h1>
+            
+            <h3>Job Type: ${work || expt}</h3>
+         </div>
+         <div class="comname">
+            <h3>Company Name: ${wname || Company_Name}</h3>
+         </div>
+         <div class="location">
+            <h3>Location: ${location || Area}</h3>
+         </div>
+         <div class="tmp">
+            <h3>Time Duration: ${tmp || timeperiod}</h3>
+         </div>
+        </div>
+      </div>
+        
+         
+
+      
+
+
 
     </body>`;
-  } else {
-    main.style.display = "block";
-    secondPage.style.display = "none";
-    alert("Please enter correct details");
-  }
-  isHidden = !isHidden;
+   } else {
+      main.style.display = "block";
+      secondPage.style.display = "none";
+      alert("Please enter correct details");
+   }
+   isHidden = !isHidden;
 }

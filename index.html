@@ -19,23 +19,12 @@
                 <p>Fill your personal information in this section.</p>
                 <div class="name-box">
                     <div class="Fname">
-                        <label for="first-name"> <span>First Name :</span> </label>
+                        <label for="first-name1"> <span>First Name :</span> </label>
                         <br>
-                        <input type="text" id="first-name" maxlength="10" name="first-name"
+                        <input type="text" id="first-name1" maxlength="100" name="first-name"
                             placeholder="Enter your first name " required />
                     </div>
-                    <div class="Mname">
-                        <label for="middle-name"> <span>Middle Name :</span> </label>
-                        <br>
-                        <input type="text" id="middle-name" maxlength="10" name="middle-name"
-                            placeholder="Enter your middle name " />
-                    </div>
-                    <div class="Lname">
-                        <label for="last-name"> <span>Last Name :</span> </label>
-                        <br>
-                        <input type="text" id="last-name" maxlength="10" name="last-name"
-                            placeholder="Enter your last name " required />
-                    </div>
+                    
                 </div>
                 <br>
                 <div class="add-box">
@@ -133,11 +122,12 @@
                     <h4 style="margin: 5px; padding: 5px;color:gray ;">Summary</h4>
 
                     <div class="sumarry-box">
-                        <textarea name="summary" id="summary-box" rows="4"
+                        <textarea name="summary" id="summary-box" rows="4" style="resize: none; border: none;resize: none; overflow:hidden;"
                             placeholder="Enter about your areas of excellence"></textarea>
                     </div>
-                    <button class="btn"
+                    <button class="btn" type="submit" id="btn-section" 
                         style="margin: 5px; padding: 5px; width: 100px;background-color: lightskyblue;">Add Section</button>
+                        <div id="section-container"></div>
                 </div>
                 <br><br>
                 <div class="JobProfile">
