@@ -48,12 +48,12 @@ function generate() {
       secondPage.innerHTML = `
         
     <style>.left {
-    border: 2px solid black;
+    
     position: absolute;
     display: inline-block;
     width: 33%;
     height: 1800px;
-    background-color:black;
+    
     color: white;
 }
 .left img{
@@ -65,7 +65,15 @@ function generate() {
     
 }
 body{
-    background-color:grey;
+    
+    background: linear-gradient(
+      to right,
+      black 0%,
+      black 35%,
+      gray 35%,
+      gray 100%
+      
+    );
     overflow-x: hidden;
 }
 /* .left text{
@@ -120,9 +128,7 @@ body{
     margin: -1px;
     color: rgb(177, 174, 174);
  }
- h1{
-    color: rgb(5, 4, 4);
- }
+ 
  .email{
     /* margin-top: 20px;
     margin-bottom: 50px; */
@@ -308,7 +314,7 @@ body{
    margin: 5px;
    padding:5px;
    top: 10px;
-   left:500px;
+   left:550px;
    background-color: grey;
  }
  .new3 hr{
@@ -375,8 +381,31 @@ body{
    left:500px;
    color: rgb(192, 168, 168);
  }
+ .new10 hr{
+   position: relative;
+    top: 240px;
+    width: 67%;
+    left: 32%;
+    margin-top: 10px;
+    display: inline-block
+ }
+   .imp-links{
+   position: relative;
+    left:-25px;
+    top: 250px;
+    /* margin-top: 70px; */
+    margin: 5px;
+    text-align: center;
+    /* border: 2px solid white; */
+    font-size: 40px;
+   
+ }
+ 
+ 
  </style>
+ 
  <body>
+ 
       <div class="Complete">
         <div class="left">
             <img src="officialimg.jpg" alt="">
@@ -438,6 +467,14 @@ body{
             <div class="time1">
                 Time Duration
                 <h6>${mtime || Time_Duration}</h6>
+            </div>
+            <div class="imp-links">
+                LINKS
+
+                
+            </div>
+            <div class="new10">
+                <hr>
             </div>
             
             
