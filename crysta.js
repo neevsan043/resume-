@@ -1,51 +1,112 @@
 const inputField = document.querySelector("#schooling");
 const main = document.querySelector("#editor");
 const secondPage = document.querySelector(".secondpage");
+const generateBtn = document.querySelector("#generate-btn");
 let isHidden = true;
 const address = document.querySelector("#Address");
-console.log(address.innerHTML);
-document.getElementById('professional-qualification').addEventListener('click', function () {
-   const experienceList = document.getElementById('experience-list');
-   const newExperienceItem = document.createElement('div');
-   newExperienceItem.classList.add('experience-item');
-   newExperienceItem.innerHTML = `
-       <div class="form-group">
-           <label for="job-title">Job Title*</label>
-           <input type="text" id="job-title" name="job-title" required>
-       </div>
-                  <div class="button-group">
-           <button type="button" class="delete-experience">Delete</button>
-       </div>
-   `;
-   experienceList.appendChild(newExperienceItem);
+document.getElementById('professional-qualification-btn').addEventListener('click', function () {
+    const sectionContainer = document.getElementById('section-container');
+    const newSection = document.createElement('div');
+    newSection.classList.add('professional-qualification-section');
+    newSection.innerHTML = `
+        <div class="form-group">
+            <label for="additional-qualification">Additional Qualification:</label>
+            <input type="text" id="additional-qualification" name="additional-qualification" required>
+        </div>
+        <button type="button" class="delete-section-btn">Delete Section</button>
+    `;
+    sectionContainer.appendChild(newSection);
+    addDeleteSectionFunctionality();
 });
 
+document.getElementById('experience-btn').addEventListener('click', function () {
+    const jobProfileSection = document.querySelector('.JobProfile');
+    const newExperienceSection = document.createElement('div');
+    newExperienceSection.classList.add('experience-section');
+    newExperienceSection.innerHTML = `
+        <div class="jb">
+            <div class="jt">
+                <label for="job-title">Job Title</label><br>
+                <input type="text" name="job-title" placeholder="Enter Job Title"><br>
+            </div>
+            <div class="cmname">
+                <label for="company">Company</label><br>
+                <input type="text" name="company" placeholder="Enter Company Name"><br>
+            </div>
+        </div>
+        <div class="jc">
+            <div class="loc">
+                <label for="location">Location</label><br>
+                <input type="text" name="location" placeholder="Enter Location"><br>
+            </div>
+            <div class="tmd">
+                <label for="timeperiod">Time Duration</label><br>
+                <input type="text" name="timeperiod" placeholder="Enter Time Duration "><br>
+            </div>
+        </div>
+        <button type="button" class="delete-section-btn">Delete Section</button>
+    `;
+    jobProfileSection.appendChild(newExperienceSection);
+    addDeleteSectionFunctionality();
+});
+
+function addDeleteSectionFunctionality() {
+    const deleteButtons = document.querySelectorAll('.delete-section-btn');
+    deleteButtons.forEach(button => {
+        button.addEventListener('click', function () {
+            this.parentElement.remove();
+        });
+    });
+}
+
 function generate() {
-   const phoneNumber = document.querySelector("#phone-number").value;
-   const email = document.querySelector("#email-address").value;
-   const address = document.querySelector("#address").value;
-   const batch = document.querySelector("#bachelors-year").value;
-   const bname = document.querySelector("#bachelors-degree").value;
-   const uname = document.querySelector("#bachelors-university").value;
-   const btime = document.querySelector("#bachelors-duration").value;
-   const mtime = document.querySelector("#masters-duration").value;
-   const muname = document.querySelector("#masters-university").value;
-   const masters = document.querySelector("#masters-year").value;
-   const mname = document.querySelector("#masters-degree").value;
-   const fname = document.querySelector("#first-name1").value;
-   const pqalify = document.querySelector("#summary-box").value;
-   const work = document.querySelector("#job-title").value;
-   const wname = document.querySelector("#company").value;
-   const location = document.querySelector("#location").value;
-   const tmp = document.querySelector("#timeperiod").value;
-   const phoneNumberRegex = /^\d{10}$/;
-   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-   const phoneNumberMatch = phoneNumberRegex.test(phoneNumber);
-   const emailMatch = emailRegex.test(email);
-   if (isHidden && phoneNumberMatch && emailMatch) {
-      main.style.display = "none";
-      secondPage.style.display = "block";
-      secondPage.innerHTML = `
+    const phoneNumber = document.querySelector("#phone-number").value;
+    const email = document.querySelector("#email-address").value;
+    const address = document.querySelector("#address").value;
+    const batch = document.querySelector("#bachelors-year").value;
+    const bname = document.querySelector("#bachelors-degree").value;
+    const uname = document.querySelector("#bachelors-university").value;
+    const btime = document.querySelector("#bachelors-duration").value;
+    const mtime = document.querySelector("#masters-duration").value;
+    const muname = document.querySelector("#masters-university").value;
+    const masters = document.querySelector("#masters-year").value;
+    const mname = document.querySelector("#masters-degree").value;
+    const fname = document.querySelector("#first-name1").value;
+    const pqalify = document.querySelector("#summary-box").value;
+    const work = document.querySelector("#job-title").value;
+    const wname = document.querySelector("#company").value;
+    const location = document.querySelector("#location").value;
+    const tmp = document.querySelector("#timeperiod").value;
+    const lin = document.querySelector("#linkedin").value;
+    const anchor = document.createElement('anchor');
+    anchor.innerText("Linked_in id ");
+    anchor.href = lin;
+    const da = document.querySelector('.linkedin-show');
+    da.appendChild(anchor);
+    
+
+
+
+    // const userinlink = document.getElementById('linkedin').value;
+    const phoneNumberRegex = /^\d{10}$/;
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const phoneNumberMatch = phoneNumberRegex.test(phoneNumber);
+    const emailMatch = emailRegex.test(email);
+    const fileInput = document.getElementById('imageInput');
+    const file = fileInput.files[0];
+    const reader = new FileReader();
+    reader.onload = function (e) {
+        const img = new Image();
+        img.src = e.target.result;
+
+        secondPage.document.write('<img src="' + img.src + '">');
+    }
+    reader.readAsDataURL(file);
+    if (isHidden && phoneNumberMatch && emailMatch) {
+        main.style.display = "none";
+        secondPage.style.display = "block";
+        generateBtn.style.display = "none";
+        secondPage.innerHTML = `
         
     <style>.left {
     
@@ -400,11 +461,36 @@ body{
     font-size: 40px;
    
  }
+ .linkedin {
+   margin: 5px;
+   font-size: 25px;
+   text-align: left;
+   position: relative;
+   top: 350px;
+   left: 155px;
+   display: block;
+   width: 60%
+}
+
+.fa-linkedin {
+   background-color: aqua;
+}
+
+#inicon {
+   position: relative;
+   top: 1470px;
+   left: 160px;
+
+}
  
  
  </style>
+ <head>
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+ </head>
  
  <body>
+<i class="fa-brands fa-linkedin" id="inicon" style="font-size: 50px;"></i>
  
       <div class="Complete">
         <div class="left">
@@ -476,6 +562,10 @@ body{
             <div class="new10">
                 <hr>
             </div>
+            <div class="linkedin-show">
+                
+                // <h6>${userinlink || Linked_In}</h6>
+            </div>
             
             
 
@@ -512,10 +602,11 @@ body{
 
 
     </body>`;
-   } else {
-      main.style.display = "block";
-      secondPage.style.display = "none";
-      alert("Please enter correct details");
-   }
-   isHidden = !isHidden;
+    } else {
+        main.style.display = "block";
+        generateBtn.style.display = "block";
+        secondPage.style.display = "none";
+        alert("Please enter correct details");
+    }
+    isHidden = !isHidden;
 }

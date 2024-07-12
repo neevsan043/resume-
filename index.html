@@ -6,20 +6,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="new.css" />
-    
+
 
 </head>
 
 
 <body>
-    
 
-    
+
+
     <section id="editor">
         <div class="resume-form" id="format">
             <form id="schooling">
                 <h2>Personal Details</h2>
                 <p>Fill your personal information in this section.</p>
+                <div class="image-box">
+                    <label for="imageInput"> <span>Insert Profile Picture:</span></label>
+                    <br>
+                    <input class="file-upload-input" id="imageInput" type="file" onchange="readURL(this)"
+                        accept="Image/*" required>
+
+                </div>
                 <div class="name-box">
                     <div class="Fname">
                         <label for="first-name1"> <span>First Name :</span> </label>
@@ -27,7 +34,7 @@
                         <input type="text" id="first-name1" maxlength="100" name="first-name"
                             placeholder="Enter your first name " required />
                     </div>
-                    
+
                 </div>
                 <br>
                 <div class="add-box">
@@ -54,7 +61,22 @@
                     <div class="linkedin">
                         <label for="linkedin">LinkedIn Profile : </label>
                         <br>
-                        <input type="url" id="linkedin" placeholder="Enter your LinkedIn url" name="linkedin-url" required />
+                        <input type="text" id="linkedin" placeholder="Enter your LinkedIn Url" name="linkedin-url"
+                            required />
+                        <a href="#" id="linkedicon"></a>
+                    </div>
+                </div>
+                <br>
+                <div class="implin">
+                    <div class="github">
+                        <label for="github">Github Profile:</label>
+                        <br>
+                        <input type="url" id="github" placeholder="Enter your GitHub Url" required>
+                    </div>
+                    <div class="instagram">
+                        <label for="insta">Instagram Profile:</label>
+                        <br>
+                        <input type="url" id="insta" placeholder="Enter your Instagram Url">
                     </div>
                 </div>
 
@@ -65,12 +87,14 @@
                             <div class="year1">
                                 <label for="bachelors-year">Year of Bachelors : </label>
                                 <br>
-                                <input type="number" id="bachelors-year" placeholder="Enter the year of bachelors " minlength="4" name="bachelors-year" required />
+                                <input type="number" id="bachelors-year" placeholder="Enter the year of bachelors "
+                                    minlength="4" name="bachelors-year" required />
                             </div>
                             <div class="degree">
                                 <label for="bachelors-degree">Degree Course : </label>
                                 <br>
-                                <input type="text" id="bachelors-degree" placeholder="Enter the degree course chosen" name="bachelors-degree" required />
+                                <input type="text" id="bachelors-degree" placeholder="Enter the degree course chosen"
+                                    name="bachelors-degree" required />
                             </div>
                         </div>
                         <br><br>
@@ -78,12 +102,15 @@
                             <div class="univer">
                                 <label for="bachelors-university">Name of the University : </label>
                                 <br>
-                                <input type="text" id="bachelors-university" placeholder="Enter the name of the university" name="bachelors-university" required />
+                                <input type="text" id="bachelors-university"
+                                    placeholder="Enter the name of the university" name="bachelors-university"
+                                    required />
                             </div>
                             <div class="time">
                                 <label for="bachelors-duration">Time Duration: </label>
                                 <br>
-                                <input type="text" id="bachelors-duration" placeholder="Enter the time period" name="bachelors-duration" required />
+                                <input type="text" id="bachelors-duration" placeholder="Enter the time period"
+                                    name="bachelors-duration" required />
                             </div>
                         </div>
                     </div>
@@ -95,12 +122,14 @@
                                 <div class="year2">
                                     <label for="masters-year">Year of Masters : </label>
                                     <br>
-                                    <input type="number" id="masters-year" placeholder="Enter the year of masters " minlength="4" name="masters-year" required />
+                                    <input type="number" id="masters-year" placeholder="Enter the year of masters "
+                                        minlength="4" name="masters-year" required />
                                 </div>
                                 <div class="degree3">
                                     <label for="masters-degree">Degree Course : </label>
                                     <br>
-                                    <input type="text" id="masters-degree" placeholder="Enter the degree course chosen" name="masters-degree" required />
+                                    <input type="text" id="masters-degree" placeholder="Enter the degree course chosen"
+                                        name="masters-degree" required />
                                 </div>
                             </div>
                             <br><br>
@@ -108,12 +137,15 @@
                                 <div class="univers">
                                     <label for="masters-university">Name of the University : </label>
                                     <br>
-                                    <input type="text" id="masters-university" placeholder="Enter the name of the university" name="masters-university" required />
+                                    <input type="text" id="masters-university"
+                                        placeholder="Enter the name of the university" name="masters-university"
+                                        required />
                                 </div>
                                 <div class="time1">
                                     <label for="masters-duration">Time Duration: </label>
                                     <br>
-                                    <input type="text" id="masters-duration" placeholder="Enter the time period" name="masters-duration" required />
+                                    <input type="text" id="masters-duration" placeholder="Enter the time period"
+                                        name="masters-duration" required />
                                 </div>
                             </div>
                         </div>
@@ -125,12 +157,14 @@
                     <h4 style="margin: 5px; padding: 5px;color:gray ;">Summary</h4>
 
                     <div class="sumarry-box">
-                        <textarea name="summary" id="summary-box" rows="4" style="resize: none; border: none;resize: none; overflow:hidden;"
+                        <textarea name="summary" id="summary-box" rows="4"
+                            style="resize: none; border: none;resize: none; overflow:hidden;"
                             placeholder="Enter about your areas of excellence"></textarea>
                     </div>
-                    <button class="btn" type="submit" id="btn-section" 
-                        style="margin: 5px; padding: 5px; width: 100px;background-color: lightskyblue;">Add Section</button>
-                        <div id="section-container"></div>
+                    <button class="btn" type="button" id="professional-qualification-btn"
+                        style="margin: 5px; padding: 5px; width: 100px;background-color: lightskyblue;">Add
+                        Section</button>
+                    <div id="section-container"></div>
                 </div>
                 <br><br>
                 <div class="JobProfile">
@@ -159,17 +193,23 @@
                             <input type="text" id="timeperiod" name="timeperiod" placeholder="Enter Time Duration ">
                         </div>
                     </div>
-                    <button class="btn"
-                        style="margin: 5px; padding: 5px; width: 100px;background-color: lightskyblue;">Add Section</button>
+
+                    <button class="btn" type="button" id="experience-btn"
+                        style="margin: 5px; padding: 5px; width: 100px;background-color: lightskyblue;">Add
+                        Section
+                    </button>
+
+
                 </div>
+
             </form>
         </div>
     </section>
     <div class="secondpage"></div>
-    <button onclick="generate()" style="background: black;color: white;">
+    <button id="generate-btn" onclick="generate()" style="background: black;color: white;">
         Generate
     </button>
-    
+
 
     <script src="crysta.js"></script>
 </body>
