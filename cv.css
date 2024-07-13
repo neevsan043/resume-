@@ -13,8 +13,10 @@
    left: 120px;
    top: 5px;
    border-radius: 100%;
+   border: 2px solid red;
+   /* padding: 20px; */
 
-}
+} 
 
 body {
 

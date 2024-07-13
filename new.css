@@ -157,3 +157,6 @@ p {
     color: gray;
 
 }
+.file-upload-input{
+    display: none;
+}

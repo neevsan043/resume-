@@ -4,26 +4,30 @@ const secondPage = document.querySelector(".secondpage");
 const generateBtn = document.querySelector("#generate-btn");
 let isHidden = true;
 const address = document.querySelector("#Address");
-document.getElementById('professional-qualification-btn').addEventListener('click', function () {
-    const sectionContainer = document.getElementById('section-container');
-    const newSection = document.createElement('div');
-    newSection.classList.add('professional-qualification-section');
-    newSection.innerHTML = `
+document
+    .getElementById("professional-qualification-btn")
+    .addEventListener("click", function () {
+        const sectionContainer = document.getElementById("section-container");
+        const newSection = document.createElement("div");
+        newSection.classList.add("professional-qualification-section");
+        newSection.innerHTML = `
         <div class="form-group">
             <label for="additional-qualification">Additional Qualification:</label>
             <input type="text" id="additional-qualification" name="additional-qualification" required>
         </div>
         <button type="button" class="delete-section-btn">Delete Section</button>
     `;
-    sectionContainer.appendChild(newSection);
-    addDeleteSectionFunctionality();
-});
+        sectionContainer.appendChild(newSection);
+        addDeleteSectionFunctionality();
+    });
 
-document.getElementById('experience-btn').addEventListener('click', function () {
-    const jobProfileSection = document.querySelector('.JobProfile');
-    const newExperienceSection = document.createElement('div');
-    newExperienceSection.classList.add('experience-section');
-    newExperienceSection.innerHTML = `
+document
+    .getElementById("experience-btn")
+    .addEventListener("click", function () {
+        const jobProfileSection = document.querySelector(".JobProfile");
+        const newExperienceSection = document.createElement("div");
+        newExperienceSection.classList.add("experience-section");
+        newExperienceSection.innerHTML = `
         <div class="jb">
             <div class="jt">
                 <label for="job-title">Job Title</label><br>
@@ -46,18 +50,30 @@ document.getElementById('experience-btn').addEventListener('click', function () 
         </div>
         <button type="button" class="delete-section-btn">Delete Section</button>
     `;
-    jobProfileSection.appendChild(newExperienceSection);
-    addDeleteSectionFunctionality();
-});
+        jobProfileSection.appendChild(newExperienceSection);
+        addDeleteSectionFunctionality();
+    });
 
 function addDeleteSectionFunctionality() {
-    const deleteButtons = document.querySelectorAll('.delete-section-btn');
-    deleteButtons.forEach(button => {
-        button.addEventListener('click', function () {
+    const deleteButtons = document.querySelectorAll(".delete-section-btn");
+    deleteButtons.forEach((button) => {
+        button.addEventListener("click", function () {
             this.parentElement.remove();
         });
     });
 }
+
+// function readURL(input) {
+//     if (input.files && input.files[0]) {
+//         const reader = new FileReader();
+//         reader.onload = function (e) {
+//             document.getElementById('imageInput').src = e.target.result;
+//         }
+
+
+//         reader.readAsDataURL(input.files[0]);
+//     }
+// }
 
 function generate() {
     const phoneNumber = document.querySelector("#phone-number").value;
@@ -78,30 +94,37 @@ function generate() {
     const location = document.querySelector("#location").value;
     const tmp = document.querySelector("#timeperiod").value;
     const lin = document.querySelector("#linkedin").value;
-    const anchor = document.createElement('anchor');
-    anchor.innerText("Linked_in id ");
+    const anchor = document.createElement("a");
+    anchor.textContent = "click here";
     anchor.href = lin;
-    const da = document.querySelector('.linkedin-show');
-    da.appendChild(anchor);
-    
-
-
-
-    // const userinlink = document.getElementById('linkedin').value;
+    const userinlink = document.getElementById('linkedin').value;
     const phoneNumberRegex = /^\d{10}$/;
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     const phoneNumberMatch = phoneNumberRegex.test(phoneNumber);
     const emailMatch = emailRegex.test(email);
-    const fileInput = document.getElementById('imageInput');
-    const file = fileInput.files[0];
-    const reader = new FileReader();
-    reader.onload = function (e) {
-        const img = new Image();
-        img.src = e.target.result;
+    // const fileInput = document.getElementById("imageInput");
+    // const file = fileInput.files[0];
+    // const reader = new FileReader();
+    // reader.onload = function (e) {
+    //     const img = new Image();
+    //     img.src = e.target.result;
 
-        secondPage.document.write('<img src="' + img.src + '">');
+    //     if (secondPage) {
+    //         const newImage = document.createElement("img");
+    //         newImage.src = img.src;
+
+    //         secondPage.appendChild(newImage);
+    //     } else {
+    //         console.error('Element with ID "secondPage" not found.');
+    //     }
+    // };
+
+    // reader.readAsDataURL(file);
+    let profilePic = document.getElementById("profile-pic");
+    let inputfile = document.getElementById("imageInput");
+    inputfile.onchange = function(){
+        profilePic.src = URL.createObjectURL(inputfile.files[0])
     }
-    reader.readAsDataURL(file);
     if (isHidden && phoneNumberMatch && emailMatch) {
         main.style.display = "none";
         secondPage.style.display = "block";
@@ -123,6 +146,7 @@ function generate() {
     left: 120px;
     top: 5px;
     border-radius: 100%;
+    padding:20px;
     
 }
 body{
@@ -473,7 +497,7 @@ body{
 }
 
 .fa-linkedin {
-   background-color: aqua;
+   background-color: black;
 }
 
 #inicon {
@@ -490,11 +514,11 @@ body{
  </head>
  
  <body>
-<i class="fa-brands fa-linkedin" id="inicon" style="font-size: 50px;"></i>
+
  
       <div class="Complete">
         <div class="left">
-            <img src="officialimg.jpg" alt="">
+            <img src="officialimg.jpg" id="profile-pic" alt="">
             <div class="text">
                 CONTACT
 
@@ -521,38 +545,38 @@ body{
             </div>
             <div class="year">
                 Year
-                <h6>${batch || Batchelors}</h6>
+                <h6>${batch || "Batchelors"}</h6>
             </div>
             <div class="degree">
                 Degree
-                <h6>${bname || CourseName}</h6>
+                <h6>${bname || "CourseName"}</h6>
             </div>
             <div class="univ">
                 University
-                <h6>${uname || University}</h6>
+                <h6>${uname || "University"}</h6>
             </div>
             <div class="time">
                 Time Duration
-                <h6>${btime || Time_Duration}</h6>
+                <h6>${btime || "Time_Duration"}</h6>
             </div>
             <br><br>
             <br><br><br>
 
             <div class="year1">
                 Year
-                <h6>${masters || Year}</h6>
+                <h6>${masters || "Year"}</h6>
             </div>
             <div class="degree1">
                 Degree
-                <h6>${mname || GraduationYear}</h6>
+                <h6>${mname || "GraduationYear"}</h6>
             </div>
             <div class="univ1">
                 University
-                <h6>${muname || UniversityName}</h6>
+                <h6>${muname || "UniversityName"}</h6>
             </div>
             <div class="time1">
                 Time Duration
-                <h6>${mtime || Time_Duration}</h6>
+                <h6>${mtime || "Time_Duration"}</h6>
             </div>
             <div class="imp-links">
                 LINKS
@@ -562,35 +586,35 @@ body{
             <div class="new10">
                 <hr>
             </div>
-            <div class="linkedin-show">
-                
-                // <h6>${userinlink || Linked_In}</h6>
-            </div>
+            <a href="${userinlink}" class="linkedin-show">
+                <i class="fa-brands fa-linkedin" id="inicon" style="font-size: 50px;"></i>
+            </a>
             
             
+
 
         </div>
         <div class="right">
             <div class="fname">
-            <h3>${fname || First_Name}</h3>
+            <h3>${fname || "First_Name"}</h3>
             </div>
          <div class = "content">
             <h1>Professional Resume</h1>
-            <h3>${pqalify || Content}</h3>
+            <h3>${pqalify || "Content"}</h3>
          </div>
          <div class="work">
             <h1>Work Experience</h1>
             
-            <h3>Job Type: ${work || expt}</h3>
+            <h3>Job Type: ${work || "expt"}</h3>
          </div>
          <div class="comname">
-            <h3>Company Name: ${wname || Company_Name}</h3>
+            <h3>Company Name: ${wname || "Company_Name"}</h3>
          </div>
          <div class="location">
-            <h3>Location: ${location || Area}</h3>
+            <h3>Location: ${location || "Area"}</h3>
          </div>
          <div class="tmp">
-            <h3>Time Duration: ${tmp || timeperiod}</h3>
+            <h3>Time Duration: ${tmp || "timeperiod"}</h3>
          </div>
         </div>
       </div>
