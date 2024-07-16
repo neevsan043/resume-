@@ -98,6 +98,16 @@ function generate() {
     anchor.textContent = "click here";
     anchor.href = lin;
     const userinlink = document.getElementById('linkedin').value;
+    const git = document.querySelector('#github').value;
+    const anchor1 = document.createElement("a");
+    anchor1.textContent = "click here";
+    anchor1.href = git;
+    const userid = document.getElementById('github').value;
+    const instag = document.querySelector("#insta");
+    const anchor2 = document.createElement("a");
+    anchor2.textContent = "click here";
+    anchor2.href = instag;
+    const instaid = document.getElementById('insta').value;
     const phoneNumberRegex = /^\d{10}$/;
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     const phoneNumberMatch = phoneNumberRegex.test(phoneNumber);
@@ -124,7 +134,7 @@ function generate() {
     let inputfile = document.getElementById("imageInput");
     inputfile.onchange = function(){
         profilePic.src = URL.createObjectURL(inputfile.files[0])
-    }
+    };
     if (isHidden && phoneNumberMatch && emailMatch) {
         main.style.display = "none";
         secondPage.style.display = "block";
@@ -243,7 +253,7 @@ body{
  .text2{
     position: absolute;
     left: 150px;
-    top: 600px;
+    top: 635px;
     /* margin-top: 70px; */
     margin: 5px;
     text-align: center;
@@ -502,9 +512,20 @@ body{
 
 #inicon {
    position: relative;
-   top: 1470px;
+   top: 250px;
    left: 160px;
+}
 
+#giticon {
+   position: relative;
+   top: 250px;
+   left: 200px;
+}
+
+#iniicon {
+   position: relative;
+   top: 250px;
+   left: 250px;
 }
  
  
@@ -586,8 +607,15 @@ body{
             <div class="new10">
                 <hr>
             </div>
+            
             <a href="${userinlink}" class="linkedin-show">
-                <i class="fa-brands fa-linkedin" id="inicon" style="font-size: 50px;"></i>
+                <i class="fa-brands fa-linkedin" id="inicon" style="font-size: 50px; color: #0091ff"></i>
+            </a>
+            <a href="${userid}" class="Github-show">
+                <i class="fa-brands fa-square-github"  id="giticon" style="font-size: 50px; color: #8096ac;"></i>
+            </a>
+             <a href="${instaid}" class="Insta-show">
+                <i class="fa-brands fa-instagram"  id="iniicon" style="font-size: 50px;color: #ed0c84;"></i>
             </a>
             
             
