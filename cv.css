@@ -1,10 +1,24 @@
+/* Global styles */
+
+* {
+   box-sizing: border-box;
+   margin: 0;
+   padding: 0;
+}
+
+body {
+   font-family: Arial, sans-serif;
+   background: linear-gradient(to right, black 0%, black 35%, gray 35%, gray 100%);
+   overflow-x: hidden;
+}
+
 .left {
-   border: 2px solid black;
    position: absolute;
    display: inline-block;
    width: 33%;
    height: 1800px;
    color: white;
+   color: #fff
 }
 
 .left img {
@@ -13,26 +27,9 @@
    left: 120px;
    top: 5px;
    border-radius: 100%;
-   border: 2px solid red;
-   /* padding: 20px; */
-
-} 
-
-body {
-
-   background: linear-gradient(to right,
-         black 0%,
-         black 35%,
-         gray 35%,
-         gray 100%);
-   overflow-x: hidden;
+   padding: 20px;
 }
 
-/* .left text{
-    position: absolute;
-    top: 100px;
-    left: 1000px;
-} */
 .text {
    position: absolute;
    left: 150px;
@@ -41,10 +38,56 @@ body {
    margin-bottom: 5px;
    margin-left: 5px;
    text-align: center;
-   /* border: 2px solid white; */
    font-size: 40px;
-
 }
+
+/* Media queries */
+
+/* For screens larger than 1200px */
+@media only screen and (min-width: 1200px) {
+   .left {
+      width: 25%;
+   }
+
+   .text {
+      font-size: 50px;
+   }
+}
+
+/* For screens between 992px and 1199px */
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+   .left {
+      width: 30%;
+   }
+
+   .text {
+      font-size: 40px;
+   }
+}
+
+/* For screens between 768px and 991px */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+   .left {
+      width: 35%;
+   }
+
+   .text {
+      font-size: 35px;
+   }
+}
+
+/* For screens smaller than 767px */
+@media only screen and (max-width: 767px) {
+   .left {
+      width: 40%;
+   }
+
+   .text {
+      font-size: 30px;
+   }
+}
+
+/* Other styles */
 
 .left hr {
    position: relative;
@@ -53,7 +96,6 @@ body {
    left: 31%;
    margin-top: 10px;
    display: inline-block;
-
 }
 
 .new hr {
@@ -76,7 +118,7 @@ body {
    top: 75px;
    left: 155px;
    display: inline-block;
-   width: 40%
+   width: 40%;
 }
 
 h6 {
@@ -85,8 +127,6 @@ h6 {
 }
 
 .email {
-   /* margin-top: 20px;
-    margin-bottom: 50px; */
    margin: 5px;
    font-size: 25px;
    text-align: left;
@@ -94,12 +134,10 @@ h6 {
    top: 75px;
    left: 155px;
    display: block;
-   width: 40%
+   width: 40%;
 }
 
 .adress {
-   /* margin-top: 20px;
-    margin-bottom: 50px; */
    margin: 5px;
    font-size: 25px;
    text-align: left;
@@ -107,21 +145,25 @@ h6 {
    top: 80px;
    left: 155px;
    display: block;
-   width: 40%
+   width: 40%;
 }
 
 .text2 {
    position: absolute;
    left: 150px;
-   top: 600px;
-   /* margin-top: 70px; */
+   top: 635px;
    margin: 5px;
    text-align: center;
-   /* border: 2px solid white; */
    font-size: 40px;
+}
 
-
-
+.fname {
+   position: relative;
+   margin: 5px;
+   padding: 5px;
+   top: 0px;
+   left: 500px;
+   font-size: 100px;
 }
 
 .year {
@@ -137,7 +179,6 @@ h6 {
    display: inline-block;
    width: 50%;
    top: 150px;
-
 }
 
 .degree {
@@ -148,7 +189,7 @@ h6 {
    top: 160px;
    left: 155px;
    display: block;
-   width: 50%
+   width: 50%;
 }
 
 .univ {
@@ -159,7 +200,29 @@ h6 {
    top: 175px;
    left: 155px;
    display: block;
-   width: 60%
+   width: 60%;
+}
+
+.time1 {
+   margin: 5px;
+   font-size: 25px;
+   text-align: left;
+   position: relative;
+   top: 185px;
+   left: 155px;
+   display: block;
+   width: 60%;
+}
+
+.time {
+   margin: 5px;
+   font-size: 25px;
+   text-align: left;
+   position: relative;
+   top: 185px;
+   left: 155px;
+   display: block;
+   width: 60%;
 }
 
 .year1 {
@@ -170,12 +233,10 @@ h6 {
    font-size: 25px;
    text-align: left;
    position: relative;
-   top: 75px;
    left: 155px;
    display: inline-block;
    width: 50%;
    top: 150px;
-
 }
 
 .degree1 {
@@ -186,163 +247,5 @@ h6 {
    top: 160px;
    left: 155px;
    display: block;
-   width: 50%
-}
-
-.univ1 {
-   margin: 5px;
-   font-size: 25px;
-   text-align: left;
-   position: relative;
-   top: 175px;
-   left: 155px;
-   display: block;
-   width: 60%
-}
-
-.expertise {
-   position: absolute;
-   left: 150px;
-   margin-top: 50px;
-   margin-right: 5px;
-   margin-bottom: 10px;
-   margin-left: 5px;
-   text-align: center;
-   /* border: 2px solid white; */
-   font-size: 40px;
-   top: 1140px;
-}
-
-.new2 hr {
-   position: relative;
-   top: 280px;
-   width: 68%;
-   left: 31%;
-   margin-top: 10px;
-   display: inline-block;
-}
-
-.expt li {
-   position: relative;
-   top: 275px;
-   left: 120px;
-   font-size: 20px;
-   margin: 20px;
-
 
 }
-
-.langu {
-   position: absolute;
-   left: 150px;
-   margin-top: 50px;
-   margin-right: 5px;
-   margin-bottom: 10px;
-   margin-left: 5px;
-   text-align: center;
-   /* border: 2px solid white; */
-   font-size: 40px;
-   top: 1440px;
-}
-
-.new3 hr {
-   position: absolute;
-   top: 40px;
-   width: 150%;
-   left: -4%;
-   margin-top: 10px;
-   display: inline-block;
-}
-
-.desc li {
-   font-size: 20px;
-   position: relative;
-   text-align: left;
-   left: -38px;
-   margin: 20px;
-}
-
-.contact input {
-   background-color: blueviolet;
-}
-
-.email input {
-   background-color: blueviolet;
-}
-
-.adress input {
-   background-color: blueviolet;
-}
-
-.linkedin {
-   margin: 5px;
-   font-size: 25px;
-   text-align: left;
-   position: relative;
-   top: 350px;
-   left: 155px;
-   display: block;
-   width: 60%
-}
-
-.fa-linkedin {
-   background-color: aqua;
-}
-
-#inicon {
-   position: relative;
-   top: 1320px;
-   left: 160px;
-
-}
-
-
-
-/* <div class="contact" id="number">
-                Phone
-                <h6>${document.querySelector("#phone-number").value}</h6>
-
-            </div>
-            <div class="email" id="mail2">
-                E-mail
-                <h6>${document.querySelector("#email-address").value}</h6>
-            </div>
-
-            <div class="adress">
-                Address
-                <h6>${document.querySelector("#address").value}</h6>
-            </div>
-
-            <div class="text2">
-                EDUCATION
-            </div>
-            <div class="new">
-                <hr>
-            </div>
-            <div class="year">
-                Year
-                <h6>${document.querySelector("#year-of-bachelors").value}</h6>
-            </div>
-            <div class="degree">
-                Degree
-                <h6>${document.querySelector("#degree-course").value}</h6>
-            </div>
-            <div class="univ">
-                University
-                <h6>${document.querySelector("#university-name").value}</h6>
-            </div>
-            <br><br>
-            <br><br><br>
-
-            <div class="year1">
-                Year
-                <h6>${document.querySelector("#year-of-masters").value}</h6>
-            </div>
-            <div class="degree1">
-                Degree
-                <h6>${document.querySelector("#degree-course-masters").value}</h6>
-            </div>
-            <div class="univ1">
-                University
-                <h6>${document.querySelector("#university-name-masters").value}</h6>
-            </div> */

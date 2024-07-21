@@ -112,6 +112,9 @@ function generate() {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     const phoneNumberMatch = phoneNumberRegex.test(phoneNumber);
     const emailMatch = emailRegex.test(email);
+    
+    
+    
     // const fileInput = document.getElementById("imageInput");
     // const file = fileInput.files[0];
     // const reader = new FileReader();
@@ -400,17 +403,17 @@ body{
     margin-bottom: 10px;
     margin-left: 5px;
     text-align: center;
-    /* border: 2px solid white; */
+    
     font-size: 40px;
     top: 1440px;
  }
  .content{
    position:relative;
-   margin: 5px;
-   padding:5px;
+   margin: 10px;
+   padding:10px;
    top: 10px;
    left:550px;
-   background-color: grey;
+
  }
  .new3 hr{
     position: absolute;
@@ -442,7 +445,7 @@ body{
    padding:5px;
    top:-50px;
    left:500px;
-   color: rgb(192, 168, 168);
+   color: rgb(255, 255, 255);
  }
  .work{
    position:relative;
@@ -450,7 +453,7 @@ body{
    padding:5px;
    top:-50px;
    left:500px;
-   color: rgb(192, 168, 168);
+   color:rgb(255, 255, 255);
  }
  .comname{
    position:relative;
@@ -458,7 +461,7 @@ body{
    padding:5px;
    top:-80px;
    left:500px;
-   color: rgb(192, 168, 168);
+   color: rgb(255, 255, 255);
  }
  .location{
    position:relative;
@@ -466,7 +469,7 @@ body{
    padding:5px;
    top:-110px;
    left:500px;
-   color: rgb(192, 168, 168);
+   color:rgb(255, 255, 255);
  }
  .tmp{
    position:relative;
@@ -474,7 +477,7 @@ body{
    padding:5px;
    top:-140px;
    left:500px;
-   color: rgb(192, 168, 168);
+   color: rgb(255, 255, 255);
  }
  .new10 hr{
    position: relative;
@@ -654,6 +657,7 @@ body{
 
 
     </body>`;
+    
     } else {
         main.style.display = "block";
         generateBtn.style.display = "block";
